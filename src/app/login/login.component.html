@@ -1,0 +1,21 @@
+<div style="width: 35%">
+  <form [formGroup]="accountForm">
+    <h3>Login</h3>
+    <label>
+      email: <input type="text" formControlName="email">
+      <div class="alert alert-danger" role="alert"
+           *ngIf="accountForm.get('email')?.invalid && accountForm.get('email')?.touched">
+        Email not valid
+      </div>
+    </label>
+    <br>
+    <label>
+      password <input type="text" formControlName="password">
+    </label>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="accountForm.hasError('passwordByTrung') &&
+      accountForm.get('password')?.touched">
+      Password must by Trung
+    </div>
+  </form>
+</div>
